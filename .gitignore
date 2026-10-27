@@ -1,0 +1,126 @@
+# Python
+*.py[cod]
+__pycache__/
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# MacOS
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# =============================================================================
+# Project exclusions (empty stubs, dev-only folders, unused scaffolding)
+# =============================================================================
+
+# Dev-only folders
+frontend/
+tests/
+!tests/
+!tests/**/*.py
+benchmarks/
+!benchmarks/
+!benchmarks/README.md
+LongMemEval/
+!benchmarks/longmemeval/
+!benchmarks/longmemeval/**
+benchmarks/longmemeval/**/__pycache__/
+benchmarks/longmemeval/**/*.pyc
+benchmarks/longmemeval/data/
+benchmarks/longmemeval/results/
+benchmarks/longmemeval/outputs/
+!benchmarks/common/
+!benchmarks/common/**
+benchmarks/common/**/__pycache__/
+benchmarks/common/**/*.pyc
+!benchmarks/locomo/
+!benchmarks/locomo/**
+benchmarks/locomo/**/__pycache__/
+benchmarks/locomo/**/*.pyc
+benchmarks/locomo/data/
+benchmarks/locomo/results/
+benchmarks/locomo/outputs/
+!benchmarks/beam/
+!benchmarks/beam/**
+benchmarks/beam/**/__pycache__/
+benchmarks/beam/**/*.pyc
+benchmarks/beam/data/
+benchmarks/beam/results/
+benchmarks/beam/outputs/
+backboard/
+rust/
+
+# Empty root files
+Makefile
+ruff.toml
+
+# GitHub templates (empty)
+
+# Empty source stubs
+src/memory/
+src/_version.py
+src/__init__.py
+src/agents/weaver.py
+src/agents/verification.py
+src/agents/synthesizer.py
+src/pipelines/connector.py
+src/utils/metrics.py
+src/schemas/memory.py
+src/schemas/session.py
+src/schemas/__init__.py
+src/schemas/agents.py
+src/schemas/api.py
+src/schemas/pipeline.py
+src/storage/mongodb.py
+src/storage/chroma.py
+src/prompts/verification.py
+src/prompts/__init__.py
+src/prompts/synthesizer.py
+src/api/routes/sessions.py
+src/api/routes/search.py
+
+# Misc
+error.json
+MIGRATION_PLAN.md
+node_modules/
+repos/
+exports/
+tmp/
+.xmem/
