@@ -43,7 +43,8 @@
   <a href="#benchmarks">Benchmarks</a> &nbsp;&bull;&nbsp;
   <a href="#inicio-rapido">Início rápido</a> &nbsp;&bull;&nbsp;
   <a href="#configuracao">Configuração</a> &nbsp;&bull;&nbsp;
-  <a href="#contribua">Contribua</a>
+  <a href="#contribua">Contribua</a> &nbsp;&bull;&nbsp;
+  <a href="ROADMAP.md">Roteiro</a>
 </p>
 
 <picture>
@@ -59,6 +60,8 @@ O RecallOS está sendo retomado publicamente a partir da base aberta do XMem, or
 **Status:** projeto público em retomada. Os recursos, comandos e resultados descritos abaixo vêm da base existente e ainda precisam ser revalidados nesta nova etapa. Consulte os arquivos do repositório e as discussões abertas antes de usar qualquer parte em produção.
 
 Alguns nomes internos, caminhos e comandos ainda usam `xmem`. Eles serão mantidos enquanto a compatibilidade estiver sendo avaliada. Os avisos de direitos autorais e a licença original estão preservados nos arquivos do projeto.
+
+Acompanhe o [roteiro público](ROADMAP.md), as [mudanças registradas](CHANGELOG.md) e as orientações para [contribuir](CONTRIBUTING.md).
 
 ## O que é o RecallOS?
 
