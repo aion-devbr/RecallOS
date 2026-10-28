@@ -1,159 +1,143 @@
-# Contributing to XMem
+# Como contribuir com o RecallOS
 
-Thanks for helping improve XMem. This guide explains how to set up the project,
-make changes safely, and open a pull request that maintainers can review quickly.
+Obrigado por ajudar a melhorar o RecallOS. Este guia reúne orientações para entender a base, propor mudanças com segurança e abrir pull requests que possam ser revisados com clareza.
 
-## Before You Start
+> **Status da retomada:** os comandos e requisitos abaixo foram herdados do XMem e ainda estão sendo revalidados. Consulte o [roteiro](ROADMAP.md) e relate instruções que não funcionarem.
 
-- Check the issue list and comment on the issue you want to work on.
-- For larger changes, share your approach before opening a PR.
-- Keep each PR focused on one bug, feature, or documentation task.
-- Do not commit secrets, local `.env` files, generated caches, or API keys.
+## Antes de começar
 
-## Project Areas
+- Confira as [issues abertas](https://github.com/aion-devbr/RecallOS/issues) e comente na issue relacionada ao trabalho.
+- Para mudanças maiores, apresente a proposta antes de abrir um pull request.
+- Mantenha cada pull request focado em um problema, recurso ou tarefa de documentação.
+- Não envie segredos, arquivos `.env` locais, caches gerados nem chaves de API.
 
-This repository contains the Python backend, agents, storage integrations, API
-routes, scanner, and tests.
+## Áreas do projeto
 
-Common areas:
+A base contém o back-end Python, agentes, integrações de armazenamento, rotas da API, scanner e testes.
 
-- `src/agents/` - classifier, memory extraction, judge, and domain agents.
-- `src/pipelines/` - ingestion, retrieval, and weaver workflows.
-- `src/api/` - FastAPI application, routes, dependencies, and middleware.
-- `src/storage/` - vector store interface and Pinecone implementation.
-- `src/graph/` - Neo4j clients and graph schemas.
-- `src/scanner/` and `src/scanner_v1/` - repository indexing and AST parsing.
-- `src/schemas/` - Pydantic models used across agents and APIs.
-- `tests/` - unit and integration tests.
-- `docs/` - user and developer documentation.
+Áreas comuns:
 
-Related ecosystem pieces such as SDKs, MCP integrations, extensions, and landing
-pages may live in separate repositories. Follow the README in that component
-when working outside this backend repo.
+- `src/agents/` — classificador, extração de memórias, agente Judge e agentes de domínio.
+- `src/pipelines/` — fluxos de ingestão, recuperação e Weaver.
+- `src/api/` — aplicação FastAPI, rotas, dependências e middleware.
+- `src/storage/` — interface de armazenamento vetorial e implementação Pinecone.
+- `src/graph/` — clientes Neo4j e esquemas do grafo.
+- `src/scanner/` e `src/scanner_v1/` — indexação de repositórios e análise de AST.
+- `src/schemas/` — modelos Pydantic usados pelos agentes e pela API.
+- `tests/` — testes unitários e de integração.
+- `docs/` — documentação para usuários e desenvolvimento.
 
-## Development Setup
+SDKs, integrações MCP, extensões e páginas do ecossistema podem estar em outros repositórios. Ao trabalhar nesses componentes, siga a documentação própria de cada um.
 
-Requirements:
+## Configuração de desenvolvimento
 
-- Python 3.11 or newer.
-- Access to any external services needed by the area you are testing, such as
-  Pinecone, Neo4j, MongoDB, or an LLM provider.
+Requisitos documentados pela base:
 
-Create and activate a virtual environment:
+- Python 3.11 ou superior.
+- Acesso aos serviços externos necessários para a área em que você está trabalhando, como Pinecone, Neo4j, MongoDB ou um provedor de LLM.
+
+Crie e ative um ambiente virtual:
 
 ```powershell
 python -m venv .venv
 .venv\Scripts\activate
 ```
 
-On macOS or Linux, use:
+No macOS ou Linux:
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 ```
 
-Install the project with development dependencies:
+Instale o projeto com as dependências de desenvolvimento:
 
 ```bash
 pip install -e ".[dev]"
 ```
 
-## Testing
+## Testes
 
-XMem uses `pytest`, `pytest-asyncio`, and `pytest-cov`. Tests are organized by
-scope:
+A base declara usar `pytest`, `pytest-asyncio` e `pytest-cov`. Os testes são organizados por escopo:
 
-- `tests/unit/` - pure helpers, schema validation, deterministic agent logic,
-  and in-memory database helper behavior.
-- `tests/integration/` - pipelines and API dependency wiring with mocked LLM,
-  Pinecone, Neo4j, and scanner/code-store dependencies.
-- `tests/e2e/` - full memory flows using local fakes only.
+- `tests/unit/` — funções auxiliares, validação de esquemas e lógica determinística.
+- `tests/integration/` — pipelines e dependências da API com serviços externos simulados.
+- `tests/e2e/` — fluxos completos usando substitutos locais para serviços externos.
 
-Run the full suite:
+Comandos documentados:
 
 ```bash
 pytest
-```
-
-Run a specific scope:
-
-```bash
 pytest tests/unit
 pytest tests/integration
 pytest tests/e2e
 ```
 
-Run the same coverage gate as CI:
+A verificação de cobertura configurada na documentação original é:
 
 ```bash
 pytest --cov=src/utils --cov=src/schemas --cov=src/pipelines --cov=src/enterprise --cov=src/api --cov-report=term-missing --cov-report=xml --cov-fail-under=70
 ```
 
-Mocking policy:
+Política de simulação descrita pela base:
 
-- Do not call live LLM providers, Pinecone, Neo4j, MongoDB, or GitHub from the
-  default test suite.
-- Use the shared fakes in `tests/conftest.py` for chat models, vector stores,
-  and graph clients.
-- Keep provider-specific behavior behind small wrappers and monkeypatch those
-  wrappers in tests.
-- Add integration tests for pipeline interactions and unit tests for parser,
-  validator, and deterministic decision logic.
+- Não acesse provedores de LLM, Pinecone, Neo4j, MongoDB ou GitHub reais na suíte padrão.
+- Use os objetos simulados compartilhados em `tests/conftest.py` para modelos de chat, armazenamentos vetoriais e clientes de grafo.
+- Mantenha o comportamento específico de provedores atrás de adaptadores pequenos.
+- Cubra interações entre pipelines com testes de integração e a lógica determinística com testes unitários.
 
-## Linting and Formatting
+## Lint e formatação
 
-Run Ruff before opening a PR:
+O projeto documenta o uso de Ruff:
 
 ```bash
 ruff check src tests
 ```
 
-Use the existing project style:
+Siga o estilo existente:
 
-- Prefer small, focused functions.
-- Keep domain schemas in `src/schemas/`.
-- Keep prompt text in `src/prompts/`.
-- Keep storage writes inside the Weaver or store clients.
-- Avoid broad refactors in bug-fix PRs.
+- Prefira funções pequenas e focadas.
+- Mantenha os esquemas de domínio em `src/schemas/`.
+- Mantenha os prompts em `src/prompts/`.
+- Concentre gravações nos armazenamentos no Weaver ou nos clientes de armazenamento.
+- Evite refatorações amplas em mudanças de correção.
 
-## Coding Standards
+## Padrões de código
 
-- Use Pydantic models for structured data crossing agent, API, or pipeline
-  boundaries.
-- Keep agent outputs explicit and validated where possible.
-- Make Judge logic deterministic when the domain has stable identity keys.
-- Keep external service calls behind small wrappers so tests can use fakes.
-- Add tests for new behavior, regressions, and failure paths.
-- Preserve backward compatibility for existing stored records and API responses.
+- Use modelos Pydantic para dados estruturados que cruzam limites entre agentes, API e pipelines.
+- Valide explicitamente as saídas dos agentes sempre que possível.
+- Prefira lógica determinística no agente Judge quando houver chaves de identidade estáveis.
+- Isole chamadas a serviços externos para que possam ser simuladas nos testes.
+- Ao alterar comportamento, atualize ou acrescente testes e documente caminhos de falha.
+- Preserve a compatibilidade de registros armazenados e respostas públicas da API.
 
-## Documentation Standards
+## Documentação
 
-- Keep setup instructions copy-pasteable.
-- Prefer short examples over long explanations.
-- Update docs when changing public behavior, configuration, or setup steps.
-- Do not include real credentials, private URLs, or personal tokens in docs.
+- Mantenha instruções de configuração copiáveis e atualizadas.
+- Prefira exemplos curtos.
+- Atualize a documentação ao mudar comportamento público, configuração ou instalação.
+- Não inclua credenciais reais, URLs privadas ou tokens pessoais.
 
-## Pull Request Checklist
+## Checklist de pull request
 
-Before submitting:
+Antes de enviar:
 
-- Rebase or sync with the latest main branch.
-- Keep the PR scoped to the issue.
-- Add or update tests when behavior changes.
-- Run relevant tests and lint checks locally.
-- Update docs if setup, API behavior, or configuration changes.
-- Describe what changed, why it changed, and how you verified it.
+- Sincronize sua branch com a branch `main`.
+- Mantenha o pull request ligado a uma mudança específica.
+- Atualize os testes quando o comportamento mudar.
+- Execute as verificações relevantes e informe o que foi executado.
+- Atualize a documentação quando alterar instalação, API ou configuração.
+- Explique o que mudou, por que mudou e como verificou.
 
-Suggested PR description:
+Sugestão de descrição:
 
 ```md
-## Summary
+## Resumo
 - ...
 
-## Testing
+## Verificações
 - ...
 
-## Notes
+## Observações
 - ...
 ```
