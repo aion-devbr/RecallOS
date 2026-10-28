@@ -1,13 +1,13 @@
 <div align="center">
   <img
-    src="https://github.com/user-attachments/assets/aa171a4c-074c-4082-b3d1-c70f5f7f2aca"
-    alt="XMem Logo"
+    src="recallos-logo.svg"
+    alt="RecallOS logo"
     width="100%"
   />
 </div>
 
 <div align="center">
-  <h1>XMem</h1>
+  <h1>RecallOS</h1>
   <p><strong>AI के लिए मेमोरी लेयर जो कभी भूलती नहीं है</strong></p>
   <p>हर AI एजेंट और LLM इंटरफेस को तुरंत स्थायी, क्रॉस-प्लेटफॉर्म मेमोरी दें।</p>
 
@@ -24,7 +24,8 @@
 <hr>
 
 <p align="center">
-  <a href="README.md">English</a> &nbsp;&bull;&nbsp;
+  <a href="README.md">Português (Brasil)</a> &nbsp;&bull;&nbsp;
+  <a href="README.en.md">English</a> &nbsp;&bull;&nbsp;
   <a href="README.zh-CN.md">简体中文</a> &nbsp;&bull;&nbsp;
   <a href="README.ja.md">日本語</a> &nbsp;&bull;&nbsp;
   <a href="README.hi.md">हिन्दी</a>
@@ -40,17 +41,20 @@
 </p>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=XortexAI/XMem&type=date&theme=dark&legend=top-left" />
-  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=XortexAI/XMem&type=date&legend=top-left" />
-  <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=XortexAI/XMem&type=date&legend=top-left" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=aion-devbr/RecallOS&type=date&theme=dark&legend=top-left" />
+  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=aion-devbr/RecallOS&type=date&legend=top-left" />
+  <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=aion-devbr/RecallOS&type=date&legend=top-left" />
 </picture>
+
+> **परियोजना पुनरारंभ:** यह अनुवाद मूल XMem परियोजना से विरासत में मिली सुविधाओं का वर्णन करता है। RecallOS में उनकी उपलब्धता की अभी समीक्षा और पुष्टि की जा रही है। स्रोत कोड और लाइसेंस का श्रेय सुरक्षित रखा गया है।
+
 
 ## अपडेट / समाचार
 - **[1 जून 2026]** XMem के पास अब इसकी मेमोरी लेयर का नेटिव Golang कार्यान्वयन है। उच्च थ्रूपुट, कम विलंबता, और उत्पादन-स्तरीय परिनियोजन के लिए बनाया गया है जहां मेमोरी को लाखों इंटरैक्शन में विश्वसनीयता से काम करना होता है।
-- **[25 मई 2026]** स्थानीय वर्कस्पेस समर्थन अब लाइव है। XMem को मात्र 3 कमांड में स्थानीय रूप से सेट अप करें और मिनटों में मेमोरी के साथ निर्माण करना शुरू करें। सेटअप निर्देशों के लिए [Local.md](https://github.com/XortexAI/XMem/blob/main/Local.md) देखें।
+- **[25 मई 2026]** स्थानीय वर्कस्पेस समर्थन अब लाइव है। XMem को मात्र 3 कमांड में स्थानीय रूप से सेट अप करें और मिनटों में मेमोरी के साथ निर्माण करना शुरू करें। सेटअप निर्देशों के लिए [Local.md](https://github.com/aion-devbr/RecallOS/blob/main/Local.md) देखें।
  ```bash
-npx create-xmem@latest
-cd xmem
+git clone https://github.com/aion-devbr/RecallOS.git
+cd RecallOS
 npm run dev
 ```
 
@@ -334,8 +338,8 @@ XMem को **विशेषज्ञ AI एजेंटों की पाइ
 ### स्थानीय XMem
 
 ```bash
-npx create-xmem@latest
-cd xmem
+git clone https://github.com/aion-devbr/RecallOS.git
+cd RecallOS
 npm run dev
 ```
 
@@ -426,7 +430,7 @@ XMem अत्यधिक कॉन्फ़िगरेबल है। कि
 <div align="center">
   <p><strong>XMem के साथ निर्माण को जारी रखें।</strong></p>
   <p>
-    <a href="https://github.com/XortexAI/XMem">GitHub</a> &nbsp;•&nbsp;
+    <a href="https://github.com/aion-devbr/RecallOS">GitHub</a> &nbsp;•&nbsp;
     <a href="https://docs.xmem.in">Docs</a> &nbsp;•&nbsp;
     <a href="https://community.xmem.in">Community</a>
   </p>
