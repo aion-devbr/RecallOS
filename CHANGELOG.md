@@ -1,5 +1,12 @@
 # Histórico de mudanças
 
+## 2026-10-28 — Conferência dos comandos locais
+
+- Conferidos os scripts declarados em `package.json` com os comandos do arquivo `scripts/xmem.js`.
+- Ajustado o início rápido para clonar `aion-devbr/RecallOS`; o inicializador `create-xmem` herdado usa `XortexAI/XMem` como repositório padrão.
+- Corrigido o guia manual para criar `.env` a partir do template e baixar os modelos locais requeridos pelo Ollama.
+- A conferência foi estática. O fluxo completo não foi executado porque inicia Docker, instala dependências e pode baixar modelos.
+
 ## 2026-10-28 — Retomada pública do RecallOS
 
 - Atualizado o README em português do Brasil com o status da retomada e avisos sobre informações herdadas que ainda precisam de validação.
