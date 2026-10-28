@@ -11,10 +11,12 @@ Este roteiro registra o trabalho planejado para recuperar, validar e manter publ
 - Traduzido e revisado o README principal para apresentar o RecallOS e distinguir documentação herdada de comportamento já validado.
 - Criado este roteiro e atualizado o histórico de mudanças.
 - Traduzidas as orientações de contribuição para facilitar a participação em português.
+- Conferidos os scripts de instalação e inicialização; corrigido o guia para clonar o RecallOS e criar `.env` no fluxo manual.
 
 ## Próximo foco: estabelecer uma base confiável
 
-- Conferir os comandos de instalação e inicialização descritos nos scripts e arquivos de configuração.
+A conferência dos comandos foi estática. A execução do fluxo completo fica para um ambiente limpo, pois inicia serviços Docker, instala dependências, prepara a extensão e pode baixar modelos do Ollama.
+
 - Mapear os principais componentes: API Python, scanner, extensões, plugins e implementação Go.
 - Verificar o estado dos testes e dos fluxos de CI antes de anunciar compatibilidade ou publicar uma versão.
 - Registrar dependências, serviços externos e variáveis de ambiente necessários para cada parte do projeto.
