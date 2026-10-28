@@ -1,13 +1,13 @@
 <div align="center">
   <img
-    src="https://github.com/user-attachments/assets/aa171a4c-074c-4082-b3d1-c70f5f7f2aca"
-    alt="XMem Logo"
+    src="recallos-logo.svg"
+    alt="RecallOS logo"
     width="100%"
   />
 </div>
 
 <div align="center">
-  <h1>XMem</h1>
+  <h1>RecallOS</h1>
   <p><strong>決して忘れない AI のためのメモリレイヤー</strong></p>
   <p>すべての AI エージェントと LLM インターフェースに、永続的でクロスプラットフォームなメモリをすぐに提供します。</p>
 
@@ -23,7 +23,8 @@
 <hr>
 
 <p align="center">
-  <a href="README.md">English</a> &nbsp;&bull;&nbsp;
+  <a href="README.md">Português (Brasil)</a> &nbsp;&bull;&nbsp;
+  <a href="README.en.md">English</a> &nbsp;&bull;&nbsp;
   <a href="README.zh-CN.md">简体中文</a> &nbsp;&bull;&nbsp;
   <a href="README.ja.md">日本語</a> &nbsp;&bull;&nbsp;
   <a href="README.hi.md">हिन्दी</a>
@@ -39,17 +40,20 @@
 </p>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=XortexAI/XMem&type=date&theme=dark&legend=top-left" />
-  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=XortexAI/XMem&type=date&legend=top-left" />
-  <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=XortexAI/XMem&type=date&legend=top-left" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=aion-devbr/RecallOS&type=date&theme=dark&legend=top-left" />
+  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=aion-devbr/RecallOS&type=date&legend=top-left" />
+  <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=aion-devbr/RecallOS&type=date&legend=top-left" />
 </picture>
+
+> **プロジェクト再開について:** この翻訳には元の XMem プロジェクトから引き継いだ機能が記載されています。RecallOS での提供状況は現在確認中です。元のコードとライセンス表記は保持しています。
+
 
 ## 更新 / ニュース
 - **[2026 年 6 月 1 日]** XMem のメモリレイヤーにネイティブ Golang 実装が追加されました。より高いスループット、低いレイテンシ、そして数百万回規模のインタラクションでも信頼して動作する本番環境向けデプロイを目的に構築されています。
-- **[2026 年 5 月 25 日]** ローカルワークスペース対応が公開されました。わずか 3 コマンドで XMem をローカルにセットアップし、数分でメモリ付きアプリケーションの構築を始められます。セットアップ手順は [Local.md](https://github.com/XortexAI/XMem/blob/main/Local.md) を参照してください。
+- **[2026 年 5 月 25 日]** ローカルワークスペース対応が公開されました。わずか 3 コマンドで XMem をローカルにセットアップし、数分でメモリ付きアプリケーションの構築を始められます。セットアップ手順は [Local.md](https://github.com/aion-devbr/RecallOS/blob/main/Local.md) を参照してください。
  ```bash
-npx create-xmem@latest
-cd xmem
+git clone https://github.com/aion-devbr/RecallOS.git
+cd RecallOS
 npm run dev
 ```
 
@@ -331,8 +335,8 @@ XMem を主要なメモリソリューションとともに、確立された 2 
 ### ローカル XMem
 
 ```bash
-npx create-xmem@latest
-cd xmem
+git clone https://github.com/aion-devbr/RecallOS.git
+cd RecallOS
 npm run dev
 ```
 
