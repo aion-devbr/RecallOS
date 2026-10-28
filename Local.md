@@ -1,6 +1,6 @@
 # Local Setup Guide
 
-Use this guide to run XMem on your own machine.
+Use this guide to run RecallOS locally. Some scripts and directory names still use the internal `xmem` name.
 
 Choose the view that matches you:
 
@@ -22,14 +22,14 @@ Install these first:
 - Chrome or another Chromium-based browser
 - Ollama, unless you plan to use a cloud LLM key
 
-### 1. Clone XMem
+### 1. Clone RecallOS
 
 ```bash
-git clone https://github.com/XortexAI/XMem.git
-cd XMem
+git clone https://github.com/aion-devbr/RecallOS.git
+cd RecallOS
 ```
 
-If you already have the repository, open a terminal in the XMem repository root.
+If you already have the repository, open a terminal in the RecallOS repository root.
 
 ### 2. Pick Your LLM Setup
 
@@ -250,12 +250,32 @@ Restart the API after changing `.env`.
 
 ### Manual Backend Startup
 
-Most users should use `npm run setup` and `npm run start`. For manual backend
-startup, run:
+Most users should use `npm run setup` and `npm run start`. The `setup` command creates `.env` from the local template automatically. For manual backend startup, first create `.env` without overwriting an existing file.
+
+PowerShell:
+
+```powershell
+if (-not (Test-Path .env)) { Copy-Item templates\xmem.env.local .env }
+```
+
+macOS or Linux:
+
+```bash
+test -f .env || cp templates/xmem.env.local .env
+```
+
+Then start the local databases and create a virtual environment:
 
 ```bash
 docker compose -f docker-compose.local.yml up -d
 python -m venv .venv
+```
+
+The template uses local Ollama by default. Start Ollama and download the configured chat and embedding models:
+
+```bash
+ollama pull qwen2.5:1.5b
+ollama pull nomic-embed-text
 ```
 
 Activate the virtual environment.
