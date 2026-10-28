@@ -1,6 +1,6 @@
 <div align="center">
   <img
-    src="https://github.com/user-attachments/assets/aa171a4c-074c-4082-b3d1-c70f5f7f2aca"
+    src="recallos-logo.svg"
     alt="Marca da base original XMem"
     width="100%"
   />
@@ -31,6 +31,7 @@
 
 <p align="center">
   <a href="README.md">Português (Brasil)</a> &nbsp;&bull;&nbsp;
+  <a href="README.en.md">English</a> &nbsp;&bull;&nbsp;
   <a href="README.zh-CN.md">简体中文</a> &nbsp;&bull;&nbsp;
   <a href="README.ja.md">日本語</a> &nbsp;&bull;&nbsp;
   <a href="README.hi.md">हिन्दी</a>
