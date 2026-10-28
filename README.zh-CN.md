@@ -1,13 +1,13 @@
 <div align="center">
   <img
-    src="https://github.com/user-attachments/assets/aa171a4c-074c-4082-b3d1-c70f5f7f2aca"
-    alt="XMem Logo"
+    src="recallos-logo.svg"
+    alt="RecallOS logo"
     width="100%"
   />
 </div>
 
 <div align="center">
-  <h1>XMem</h1>
+  <h1>RecallOS</h1>
   <p><strong>永不遗忘的 AI 记忆层</strong></p>
   <p>为每一个 AI Agent 和 LLM 界面开箱即用地提供持久、跨平台记忆。</p>
 
@@ -23,7 +23,8 @@
 <hr>
 
 <p align="center">
-  <a href="README.md">English</a> &nbsp;&bull;&nbsp;
+  <a href="README.md">Português (Brasil)</a> &nbsp;&bull;&nbsp;
+  <a href="README.en.md">English</a> &nbsp;&bull;&nbsp;
   <a href="README.zh-CN.md">简体中文</a> &nbsp;&bull;&nbsp;
   <a href="README.ja.md">日本語</a> &nbsp;&bull;&nbsp;
   <a href="README.hi.md">हिन्दी</a>
@@ -39,17 +40,20 @@
 </p>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=XortexAI/XMem&type=date&theme=dark&legend=top-left" />
-  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=XortexAI/XMem&type=date&legend=top-left" />
-  <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=XortexAI/XMem&type=date&legend=top-left" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=aion-devbr/RecallOS&type=date&theme=dark&legend=top-left" />
+  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=aion-devbr/RecallOS&type=date&legend=top-left" />
+  <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=aion-devbr/RecallOS&type=date&legend=top-left" />
 </picture>
+
+> **项目恢复说明：** 本译文介绍了从原 XMem 项目继承的功能。我们正在核实这些功能在 RecallOS 中的可用性，并保留了原始代码与许可署名。
+
 
 ## 更新 / 新闻
 - **[2026 年 6 月 1 日]** XMem 现在拥有原生 Golang 版本的记忆层。它面向更高吞吐、更低延迟和生产级部署而构建，适用于需要在数百万次交互中可靠运行记忆能力的场景。
-- **[2026 年 5 月 25 日]** 本地工作区支持现已上线。只需 3 条命令即可在本地设置 XMem，并在几分钟内开始构建带记忆的应用。设置说明见 [Local.md](https://github.com/XortexAI/XMem/blob/main/Local.md)。
+- **[2026 年 5 月 25 日]** 本地工作区支持现已上线。只需 3 条命令即可在本地设置 XMem，并在几分钟内开始构建带记忆的应用。设置说明见 [Local.md](https://github.com/aion-devbr/RecallOS/blob/main/Local.md)。
  ```bash
-npx create-xmem@latest
-cd xmem
+git clone https://github.com/aion-devbr/RecallOS.git
+cd RecallOS
 npm run dev
 ```
 
@@ -331,8 +335,8 @@ XMem 是一条由 LangGraph 协调的**专用 AI Agent 管线**，背后由确�
 ### 本地 XMem
 
 ```bash
-npx create-xmem@latest
-cd xmem
+git clone https://github.com/aion-devbr/RecallOS.git
+cd RecallOS
 npm run dev
 ```
 
