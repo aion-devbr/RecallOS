@@ -323,17 +323,17 @@ A tabela e as conclusões são reproduzidas da documentação original e aguarda
 
 ### Ambiente local
 
-A documentação herdada sugere criar um espaço local com:
+Clone este repositório e inicie a configuração local:
 
 ```bash
-npx create-xmem@latest
-cd xmem
+git clone https://github.com/aion-devbr/RecallOS.git
+cd RecallOS
 npm run dev
 ```
 
-Os nomes `create-xmem` e `xmem` são mantidos pela base atual. A instalação, os requisitos e o fluxo de inicialização serão revalidados antes de serem recomendados como caminho oficial do RecallOS.
+O comando `npm run dev` está definido em `package.json`. O script `scripts/xmem.js` executa `setup` quando a instalação local ainda não está pronta e, em seguida, inicia a API. Para instruções detalhadas e inicialização manual, consulte o [guia local](Local.md). Alguns scripts, diretórios e variáveis ainda mantêm o nome interno `xmem`.
 
-Os requisitos listados pela documentação original são:
+Os requisitos documentados pela base são:
 
 - Git
 - Node.js 20 ou superior
@@ -358,7 +358,7 @@ npm run verify
 npm run doctor
 ```
 
-A base descreve o uso de uma chave de LLM na nuvem com embeddings locais via FastEmbed. Sem uma chave na nuvem, o fluxo local pode usar o Ollama e baixar os modelos necessários. Esses comandos aguardam revalidação.
+Os nomes dos comandos locais foram conferidos com `package.json` e `scripts/xmem.js`. O fluxo completo de instalação ainda não foi executado nesta retomada: ele inicia serviços Docker, instala dependências e pode baixar modelos do Ollama.
 
 ### Exportação e importação de contexto
 
